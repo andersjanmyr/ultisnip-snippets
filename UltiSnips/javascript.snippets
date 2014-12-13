@@ -1,5 +1,5 @@
 snippet us "use strict"
-"use strict";
+'use strict';
 ${0}
 endsnippet
 
@@ -19,4 +19,27 @@ snippet loga "Log arguments"
 console.log(arguments);
 endsnippet
 
+snippet it "It statement"
+it('${1:does something}', function(${2:done}) {
+	${0:// body...}
+});
+endsnippet
+
+snippet des "Describe statement"
+describe('${1:context}', function() {
+	${0:// body...}
+});
+endsnippet
+
+snippet def "Before statement"
+beforeEach(function(${1:done}) {
+	${0:// body...}
+});
+endsnippet
+
+snippet after "After statement"
+afterEach(function() {
+	${0:// body...}
+});
+endsnippet
 # vim:ft=snippets:
