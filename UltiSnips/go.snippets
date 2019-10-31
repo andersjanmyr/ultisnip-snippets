@@ -1,0 +1,24 @@
+snippet tests "tests table driven"
+func Test${1:Name}(t *testing.T) {
+	tests := []struct{
+		name      string
+		input     string
+		expected  string
+	}{
+		{
+			input:     "1:8",
+			expected: "1",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			output, err := ${2:name(input)}
+			require.NoError(t, err)
+			assert.Equal(t, tt.expected, output)
+		})
+	}
+}
+endsnippet
+
+
