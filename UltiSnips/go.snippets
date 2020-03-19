@@ -21,4 +21,26 @@ func Test${1:Name}(t *testing.T) {
 }
 endsnippet
 
+snippet mapf "map function"
+func ${1:mapItems}(items []${2:string}) []${3:string} {
+	results := []$3{}
+	for _, item := range items {
+		res := ${4:mapItem}(item)
+		results = append(results, res)
+	}
+	return results
+}
+endsnippet
+
+snippet filterf "filter function"
+func ${1:filterItems}(items []${2:string}) []$2 {
+	results := []$2{}
+	for _, item := range items {
+		if ${3:filterItem}(item) {
+			results = append(results, item)
+		}
+	}
+	return results
+}
+endsnippet
 
